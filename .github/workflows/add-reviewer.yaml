@@ -2,10 +2,10 @@ on:
   pull_request_target:
     branches:
       - main
+      - stable
+      - release/*
     types:
-      - opened
-      - reopened
-      - ready_for_review
+      - review_requested
 
 jobs:
   notify_channel:
