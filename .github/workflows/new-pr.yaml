@@ -17,6 +17,10 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           echo "$GITHUB_CONTEXT"
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            console.log(context.payload);
       - name: Send message
         env:
           PASSWORD: ${{ secrets.MATRIX_BOT_PASSWORD }}
